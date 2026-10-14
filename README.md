@@ -1,57 +1,32 @@
 # Device Bound
 
-**Device Bound** is a first-person puzzle-platformer built solo in C++ on top of a partial game engine framework. Developed over a few weeks in 2024, the game challenges players to escape a research facility using a single experimental teleportation device.
+**Device Bound** is a first-person puzzle-platformer I built solo in C++ on top of a partial game-engine framework from Universitat Pompeu Fabra, over a few weeks in early 2025, for the Video Games course (grade 9.0). You escape an underground weapons facility with an experimental device: a ball that teleports you to wherever it lands.
+
+**[▶ Walkthrough video](https://youtu.be/bmbzjY5y9Wg)** · **[itch.io page](https://realsria.itch.io/device-bound)** · **[Game Design Document (PDF)](GDD_DeviceBound.pdf)**
 
 ## Overview
 
-You play as a scientist equipped with a prototype teleportation ball. Throw the device — wherever it lands, you teleport.
-
-The game revolves around:
-- Precision throws  
-- Bouncing trajectories  
-- Strategic experimentation with a save/rewind system  
-
-After a short tutorial, the game expands into **five puzzle stages**, each introducing new applications of the core mechanic.
+You play a scientist with a prototype teleportation ball. Throw it; wherever it lands, you are. After a short tutorial the game opens into a series of puzzle areas, each built around a different use of the throw.
 
 ## Features
 
-- **Teleportation mechanic**: throw a ball to teleport to its landing point  
-- **Three throw velocities**: slow, base, and fast for different trajectories  
-- **Physics-based gameplay**: bouncing enables bank shots around obstacles  
-- **Save & rewind system**:  
-  - `G` → save position (15s snapshot)  
-  - `R` → return to saved position  
-- **Progressive level design**: tutorial + 5 puzzle stages  
-- **Custom levels** built in Blender  
+- **Throw to teleport:** three throw strengths (slow, base, fast) for different distances and arcs
+- **Save and rewind:** `G` saves your position (a 15-second snapshot) and `R` returns you to it, so a missed throw costs nothing
+- **A tutorial, then a series of puzzle areas**, with levels modelled in Blender
 
-## Development
+## What I built
 
-Solo project built on top of a partially provided C++ engine framework from Universitat Pompeu Fabra.
+On top of the course framework (renderer scaffolding and subsystem stubs) I designed and built:
 
-### Implemented:
+- the game design, the mechanics and the level content
+- the player controller, the throw/teleport system, the ball, save/rewind and the stage manager
+- renderer extensions: **frustum culling** and distance culling, and **Phong shading with distance fog** in GLSL
+- the level models in Blender; the character is animated with Mixamo
 
-- Full game design and core mechanics  
-- Rendering pipeline completion + **frustum culling**  
-- **Phong shading** with distance-based fog  
-- Player controller and movement systems  
-- Throw/teleport system and ball physics  
-- Save/rewind mechanic  
-- Stage manager and transitions  
-- Level design (Blender) and character animation (Mixamo)  
+## Why there's no code here
 
-## Framework Note
+The framework is Universitat Pompeu Fabra's course material and remains university IP, so the source can't be published. This repository holds the Game Design Document; the video shows the game running.
 
-The base engine framework (renderer scaffolding and subsystems) was provided as part of a university course at Universitat Pompeu Fabra.
+## Tech
 
-> The framework is university intellectual property, so the full source code is not publicly available. This repository documents the work built on top of it.
-
-## Tech Stack
-
-- C++  
-- Custom game on partial UPF engine framework  
-- Blender (level design)  
-- Mixamo (animation)  
-
-## Documentation
-
-- [Game Design Document (GDD)](https://github.com/JordiFabregat01/Device-Bound/blob/main/GDD_DeviceBound.pdf)
+C++ · OpenGL · GLSL · SDL · Blender · Mixamo
